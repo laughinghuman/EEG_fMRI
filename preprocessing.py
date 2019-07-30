@@ -1,6 +1,7 @@
 import scipy.signal
 import numpy as np
 from scipy.interpolate import interp1d
+import mne
 
 
 def eeg_transform(sig):
@@ -20,3 +21,13 @@ def fmri_transform(time, fmri, delay, fmri_end):
         t_list.append(mmm)
     result = (np.array(t_list))
     return result
+
+
+def find_delay_and_end(eeg_set):
+    raw = mne.io.read_raw_eeglab(eeg_set)
+    k = mne.events_from_annotations(raw)
+    jj = k[1]['mri']
+    a, b = np.where(k[0] == jj)
+    delay = k[0][a[0], 0]
+    fmri_end = k[0][a[-1], 0]
+    return delay, fmri_end
