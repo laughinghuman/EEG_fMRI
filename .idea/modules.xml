@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/EEG_fMRI.iml" filepath="$PROJECT_DIR$/.idea/EEG_fMRI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ihna_work/.idea/ihna_work.iml" filepath="$PROJECT_DIR$/../ihna_work/.idea/ihna_work.iml" />
     </modules>
   </component>
 </project>
