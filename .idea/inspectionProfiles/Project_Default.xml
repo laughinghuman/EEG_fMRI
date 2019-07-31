@@ -13,6 +13,7 @@
         <list>
           <option value="settings.settings.*" />
           <option value="object.fit_transform" />
+          <option value="scipy.stats" />
         </list>
       </option>
     </inspection_tool>
