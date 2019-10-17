@@ -35,8 +35,8 @@ class Dataset:
         eeg_flip = np.fliplr(eeg)
         fmri_im = image.smooth_img(fmri_path, fwhm=6)
         fmri = get_masked_fmri(fmri_im, "sub")
-        start = start_time - self.segment_length
-        end = start_time
+        start = start_time
+        end = start_time + self.segment_length
         x_list = []
         y_list = []
         x_fl_list = []

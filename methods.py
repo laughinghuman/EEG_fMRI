@@ -29,7 +29,7 @@ def make_a(regres, x_train):
 # fmri activity between fmri regions
 def patterns_evaluation(a, len_zones, x_train, x_test):
     real_coefs: List[None] = []
-    n= []
+    n = []
     for s in range(len_zones - 1):
         coefs = np.array(a)
         mean_coefs = coefs
@@ -47,12 +47,10 @@ def patterns_evaluation(a, len_zones, x_train, x_test):
         Final = []
         for tim in range(np.shape(vect)[0]):
             Final.append(np.cov(vect[tim, :], vect2)[0, 1])
-        Final = np.array(Final)
-        Final = Final.reshape(np.shape(x_test)[2], np.shape(x_test)[3])
-        real_coefs.append(Final)
+        final = np.array(Final).reshape(np.shape(x_test)[2], np.shape(x_test)[3])
+        real_coefs.append(final)
     N =
     return real_coefs, N
-
 
 
 # return None
@@ -86,7 +84,7 @@ def simple_linear_regression(alphas, repr_train, repr_val, y_train, y_val, zone,
 # make noize with latent variiables a noize
 # x_train dimensions N*FT
 #optimisie with results from ret
-
+#make original tafor forcasting our signal
 class linear_pattern_recognition:
 #class for finding patterns of ROI
 
