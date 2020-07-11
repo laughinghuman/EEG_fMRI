@@ -8,7 +8,7 @@ def atlas_masker(k):
     dataset_cort = datasets.fetch_atlas_harvard_oxford("%s-maxprob-thr25-2mm" % k)
     atlas_filename = dataset_cort.maps
     labels = dataset_cort.labels
-    masker = NiftiLabelsMasker(labels_img=atlas_filename, standardize=True)
+    masker = NiftiLabelsMasker(labels_img=atlas_filename, standardize=True, high_pass=0.5)
     return masker, labels
 
 

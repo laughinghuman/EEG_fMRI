@@ -16,6 +16,7 @@ from fMRI_Regions import get_masked_fmri
 # Draw left and right amigdalla and hypotalamus
 # Add number of dimensions of input
 # Create new dataset for CCA (1-channel and voxels in cortex)
+# shift instead of inverse
 
 
 class Dataset:

@@ -33,6 +33,7 @@ def patterns_evaluation(a, len_zones, x_train, x_test):
     for s in range(len_zones - 1):
         coefs = np.array(a)
         mean_coefs = coefs
+        #Do i need this?
         #mean_coefs = mean_coefs.reshape(np.shape(x_test)[2], np.shape(x_test)[3])
         vect = []
         for i in range(np.shape(x_train)[0]):
@@ -49,8 +50,9 @@ def patterns_evaluation(a, len_zones, x_train, x_test):
             Final.append(np.cov(vect[tim, :], vect2)[0, 1])
         final = np.array(Final).reshape(np.shape(x_test)[2], np.shape(x_test)[3])
         real_coefs.append(final)
-    N =
-    return real_coefs, N
+    M = breed_cov(G)
+    N = cov(G)
+    return real_coefs, N, M
 
 
 # return None
@@ -87,6 +89,8 @@ def simple_linear_regression(alphas, repr_train, repr_val, y_train, y_val, zone,
 #make original tafor forcasting our signal
 class linear_pattern_recognition:
 #class for finding patterns of ROI
+#add marks for anatomic T1
+# add splines to functions ft-fd
 
 
     def __init__(self, alphas=np.logspace(-3, 3, 7), normalize=False, epsilon=0.5):
@@ -109,7 +113,7 @@ class linear_pattern_recognition:
         len_spect = np.shape(x_train)[2]
         models = []
         topo_coefs: List[None] = []
-        spect_coefs = []
+        spect_coefs: List[None] = []
         for zone in range(self.len_zones):
             topo_regr0 = np.random.rand(1, len_chan)
             spect_regr0 = np.random.rand(len_spect, 1)
