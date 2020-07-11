@@ -56,8 +56,7 @@ def patterns_evaluation(a, len_zones, x_train, x_test):
 
 
 # return None
-
-
+# check this statement
 def make_b(regres, x_train):
     b_list = []
     for i in range(x_train[0]):
