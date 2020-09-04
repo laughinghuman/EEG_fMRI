@@ -23,18 +23,19 @@ def make_a(regres, x_train):
         a_list.append(a)
     return np.array(a_list)
 
+
 # make new attribute with covariance array and plot it
 # i need to add temporal_cca to methods
 # add noise statistics
-# fmri activity between fmri regions
+# fmri activity between regions
 def patterns_evaluation(a, len_zones, x_train, x_test):
     real_coefs: List[None] = []
     n = []
     for s in range(len_zones - 1):
         coefs = np.array(a)
         mean_coefs = coefs
-        #Do i need this?
-        #mean_coefs = mean_coefs.reshape(np.shape(x_test)[2], np.shape(x_test)[3])
+        # Do i need this?
+        # mean_coefs = mean_coefs.reshape(np.shape(x_test)[2], np.shape(x_test)[3])
         vect = []
         for i in range(np.shape(x_train)[0]):
             S1 = x_train[i, best_param[s][0], ...].reshape(-1)
@@ -56,7 +57,9 @@ def patterns_evaluation(a, len_zones, x_train, x_test):
 
 
 # return None
-# check this statement
+# return regression object
+# return simple regression object
+
 def make_b(regres, x_train):
     b_list = []
     for i in range(x_train[0]):
@@ -80,17 +83,16 @@ def simple_linear_regression(alphas, repr_train, repr_val, y_train, y_val, zone,
     coefs = models_a1[ind].coef_
     model = models_a1[ind]
     return np.array(coefs), model
-#шум как регул
-#статистики шумов
-# make noize with latent variiables a noize
-# x_train dimensions N*FT
-#optimisie with results from ret
-#make original tafor forcasting our signal
-class linear_pattern_recognition:
-#class for finding patterns of ROI
-#add marks for anatomic T1
-# add splines to functions ft-fd
 
+
+# make noise with latent variables
+# x_train dimensions N*FT
+# optimize with results from ret
+# make original  forecasting our signal
+class linear_pattern_recognition:
+    # class for finding patterns of ROI
+    # add marks for anatomic T1
+    # add splines to functions ft-fd
 
     def __init__(self, alphas=np.logspace(-3, 3, 7), normalize=False, epsilon=0.5):
         self.alphas = alphas
@@ -140,6 +142,7 @@ class linear_pattern_recognition:
                 topo_regr0 = topo_regr1
                 spect_regr0 = spect_regr1
             models.append(model)
+            # check this statement
             topo_coefs.append(topo_regr1)
             spect_coefs.append(spect_regr1)
         self.topo_coefs_ = topo_coefs

@@ -4,6 +4,7 @@ from nilearn import image
 import numpy as np
 from fMRI_Regions import get_masked_fmri
 
+
 def create_dataset(self, start_time, end_time, num_frames, eeg_path, eeg_set_path, fmri_path):
     vector_exclude = ['EOG', 'ECG', 'CW1', 'CW2', 'CW3', 'CW4', 'CW5', 'CW6', 'Status']
     raw = mne.io.read_raw_edf(eeg_path, exclude=vector_exclude)

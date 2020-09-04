@@ -3,8 +3,9 @@ import numpy as np
 from scipy.interpolate import interp1d
 import mne
 
-#add function for set eeg files
-#correltion with temerature in case of helium pump off!!!!!!
+
+# add function for set eeg files
+# correlation with temperature in case of helium pump off!!!!!!
 def eeg_transform(sig):
     f, _, ft = scipy.signal.stft(sig, fs=1000, padded=False, nperseg=400)
     ft = ft[:, 2:19, :]

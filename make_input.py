@@ -5,15 +5,15 @@ import numpy as np
 from fMRI_Regions import get_masked_fmri
 
 
-# make new atribute with labels of fmri. Call new atribute in methods
+# make new attribute with labels of fmri. Call new attribute in methods
 # make something with marks (now we need two files - set and edf. Problem with eeglab that converts set to edf
 # and change marks(events) with letters to numbers - it affects generalisation of our program. I need to extract events
 # file from eeglab and extract events
 # make filtration from 5 to 100 (i want to find delay in 5 seconds)
-# Why positive coefficients (positive correaltion) in undershoot peak?
+# Why positive coefficients (positive correlation) in undershoot peak?
 # Draw on one picture coefficients, patterns and predict time series
 # Make with pandas two tables with results with helium pump on and off
-# Draw left and right amigdalla and hypotalamus
+# Draw left and right amigdalla and hypothalamus
 # Add number of dimensions of input
 # Create new dataset for CCA (1-channel and voxels in cortex)
 # shift instead of inverse
